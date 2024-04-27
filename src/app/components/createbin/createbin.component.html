@@ -1,0 +1,10 @@
+<form [formGroup] ="binForm" class="container">
+    <h2>Create Code</h2>
+    <input type="text" placeholder="Enter title" [formControl]="title">
+    <h4 class="red-text" [hidden]="title.valid || title.untouched">Please Enter Valid title</h4>
+    <textarea type="password" placeholder="Enter code" [formControl]="code"></textarea>
+    <h4 class="red-text" [hidden]="code.valid || code.untouched">Invalid code</h4>
+    <div class="btn-container">
+        <button (click)="save()" [disabled] ="!binForm.valid" class="btn-green">save</button>
+    </div>
+</form>
